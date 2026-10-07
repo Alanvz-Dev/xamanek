@@ -1,22 +1,27 @@
 import { Check } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { AnimatedLogo } from '@/components/brand/animated-logo';
+import { heroMarkFonts } from '@/components/brand/hero-mark/fonts';
+import { HeroMark } from '@/components/brand/hero-mark/hero-mark';
+import { HeroSky } from '@/components/brand/hero-mark/hero-sky';
 import { StepGrid } from '@/components/brand/step-grid';
 import { ButtonLink } from '@/components/ui/button';
 import { Container, Section } from '@/components/ui/section';
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/cn';
 
 const HIGHLIGHTS = ['fiscal', 'nearshore', 'pricing'] as const;
 
 /**
- * Hero del home. El logo animado (GSAP) es la ÚNICA animación protagonista de la
- * primera pantalla; el titular se pinta sin animar para no retrasar el LCP.
+ * Hero del home. El logo animado (HeroMark) y su cielo son la ÚNICA animación protagonista
+ * de la primera pantalla; el titular se pinta sin animar para no retrasar el LCP.
  */
 export async function Hero() {
   const t = await getTranslations('hero');
 
   return (
     <Section tone="dark" className="pt-28 pb-20 sm:pt-32 lg:pt-40 lg:pb-32">
-      <StepGrid className="opacity-90" />
+      <HeroSky />
+      <StepGrid className="opacity-40" />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-[36rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(0_168_143/0.16),transparent)]"
@@ -49,15 +54,12 @@ export async function Hero() {
           </ul>
         </div>
 
-        <div className="relative order-first flex justify-center lg:order-none">
-          {/* Halo con gradiente (más barato de pintar que un drop-shadow con blur) */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-[-10%] -z-10 bg-[radial-gradient(closest-side,rgb(0_168_143/0.18),transparent)]"
-          />
-          <AnimatedLogo
+        <div className={cn('order-first flex justify-center lg:order-none', heroMarkFonts)}>
+          <HeroMark
             label={t('logoLabel')}
-            className="w-40 sm:w-56 lg:w-full lg:max-w-[26rem]"
+            wordmark={siteConfig.name.toUpperCase()}
+            tagline={t('logoTagline')}
+            className="w-60 sm:w-72 lg:w-full lg:max-w-md"
           />
         </div>
       </Container>

@@ -5,16 +5,16 @@
  * (nunca directo de 'gsap/*'); los plugins se cargan y registran una sola vez
  * con loadGsapPlugins().
  *
- * GSAP se usa para: logo del hero, retícula escalonada, entrada de titulares
- * y animaciones al hacer scroll. Las microinteracciones de UI usan Motion.
+ * GSAP se usa para: ticker del logo animado del hero, retícula escalonada, entrada de
+ * titulares y animaciones al hacer scroll. Las microinteracciones de UI usan Motion.
  * Nunca animes el mismo elemento con ambos.
  */
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import type { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import type { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { SplitText } from 'gsap/SplitText';
 import type { RefObject } from 'react';
+import { whenIdle } from './schedule';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(useGSAP);
@@ -23,38 +23,31 @@ if (typeof window !== 'undefined') {
 export interface GsapPlugins {
   ScrollTrigger: typeof ScrollTrigger;
   SplitText: typeof SplitText;
-  MorphSVGPlugin: typeof MorphSVGPlugin;
 }
 
 let pluginsPromise: Promise<GsapPlugins> | null = null;
 
 /**
- * Carga diferida de ScrollTrigger, SplitText y MorphSVG, registrados UNA sola vez
+ * Carga diferida de ScrollTrigger y SplitText, registrados UNA sola vez
  * (promesa memoizada). Quedan fuera del JS inicial para no retrasar el primer pintado.
  * Al terminar marca <html class="gsap-ready">, lo que desactiva el respaldo CSS de
  * [data-reveal] (ver globals.css).
  */
 export function loadGsapPlugins(): Promise<GsapPlugins> {
-  pluginsPromise ??= Promise.all([
-    import('gsap/ScrollTrigger'),
-    import('gsap/SplitText'),
-    import('gsap/MorphSVGPlugin'),
-  ]).then(([scroll, split, morph]) => {
-    const plugins = {
-      ScrollTrigger: scroll.ScrollTrigger,
-      SplitText: split.SplitText,
-      MorphSVGPlugin: morph.MorphSVGPlugin,
-    };
-    gsap.registerPlugin(plugins.ScrollTrigger, plugins.SplitText, plugins.MorphSVGPlugin);
-    document.documentElement.classList.add('gsap-ready');
-    return plugins;
-  });
+  pluginsPromise ??= Promise.all([import('gsap/ScrollTrigger'), import('gsap/SplitText')]).then(
+    ([scroll, split]) => {
+      const plugins = { ScrollTrigger: scroll.ScrollTrigger, SplitText: split.SplitText };
+      gsap.registerPlugin(plugins.ScrollTrigger, plugins.SplitText);
+      document.documentElement.classList.add('gsap-ready');
+      return plugins;
+    },
+  );
   return pluginsPromise;
 }
 
 /**
- * useGSAP diferido hasta que el navegador está libre (requestIdleCallback) y se cargan
- * los plugins. SplitText y ScrollTrigger fuerzan cálculos de layout; si corrieran
+ * useGSAP diferido hasta que el navegador está libre (requestIdleCallback), se cargan
+ * los plugins y terminan de cargar las fuentes. SplitText y ScrollTrigger fuerzan cálculos de layout; si corrieran
  * durante la hidratación retrasarían el FCP/LCP. Los elementos animados arrancan
  * ocultos por CSS ([data-reveal]), así que diferir no produce parpadeos.
  * Todo lo creado dentro de `setup` se limpia al desmontar (contextSafe).
@@ -68,7 +61,9 @@ export function useGSAPAfterPaint(
       const run = contextSafe ? contextSafe(setup) : setup;
       let cancelled = false;
       const cancelIdle = whenIdle(() => {
-        void loadGsapPlugins().then((plugins) => {
+        // Esperar a las fuentes evita que SplitText vuelva a dividir (y ScrollTrigger
+        // recalcule toda la página) cuando termina de cargar una fuente tardía.
+        void Promise.all([loadGsapPlugins(), document.fonts.ready]).then(([plugins]) => {
           if (!cancelled) run(plugins);
         });
       });
@@ -79,16 +74,6 @@ export function useGSAPAfterPaint(
     },
     { scope },
   );
-}
-
-/** Ejecuta `fn` cuando el navegador está libre tras el primer pintado. Devuelve un cancelador. */
-function whenIdle(fn: () => void): () => void {
-  if (typeof window.requestIdleCallback === 'function') {
-    const id = window.requestIdleCallback(fn, { timeout: 1200 });
-    return () => window.cancelIdleCallback(id);
-  }
-  const id = window.setTimeout(fn, 200);
-  return () => window.clearTimeout(id);
 }
 
 /** Condiciones de gsap.matchMedia() compartidas por todos los componentes. */

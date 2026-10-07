@@ -1,0 +1,388 @@
+/* ==========================================================================
+   Logo animado del hero (diseño original: design/xamanek-movimiento.html).
+   Todo va bajo .xmk para no chocar con Tailwind; keyframes con prefijo xmk-.
+   El logo tiene su propia paleta dorada: es un activo de marca, no UI
+   (la regla "gold solo para CTA" aplica a la interfaz, no al logo).
+   ========================================================================== */
+
+.xmk {
+  --xmk-bg: var(--color-deep); /* relleno de los cuerpos: tapa los rayos detrás de la pirámide */
+  --xmk-ink: #e9e2d0;
+  --xmk-ink-dim: #8c877a;
+  --xmk-gold: #e7ae2e;
+  --xmk-gold-hi: #ffe08a;
+  --xmk-gold-deep: #9a6e12;
+  --xmk-pupil: #04070d;
+  --xmk-glow: 0.34;
+}
+
+/* Colores del símbolo */
+.xmk .s-ink {
+  stroke: var(--xmk-ink);
+}
+.xmk .s-dim {
+  stroke: var(--xmk-ink-dim);
+}
+.xmk .s-gold {
+  stroke: var(--xmk-gold);
+}
+.xmk .s-goldhi {
+  stroke: var(--xmk-gold-hi);
+}
+.xmk .s-golddeep {
+  stroke: var(--xmk-gold-deep);
+}
+.xmk .f-bg {
+  fill: var(--xmk-bg);
+}
+.xmk .f-goldhi {
+  fill: var(--xmk-gold-hi);
+}
+.xmk .g0 {
+  stop-color: var(--xmk-gold-hi);
+  stop-opacity: var(--xmk-glow);
+}
+.xmk .g1 {
+  stop-color: var(--xmk-gold);
+  stop-opacity: 0;
+}
+.xmk .c0 {
+  stop-color: var(--xmk-gold-hi);
+}
+.xmk .c1 {
+  stop-color: var(--xmk-gold);
+}
+.xmk .c2 {
+  stop-color: var(--xmk-gold-deep);
+}
+
+/* Entrada */
+.xmk .draw {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: xmk-draw var(--t, 1.1s) cubic-bezier(0.65, 0, 0.25, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+.xmk .fade {
+  opacity: 0;
+  animation: xmk-fadein 0.9s ease forwards;
+  animation-delay: var(--d, 0s);
+}
+.xmk .cap {
+  opacity: 0;
+  transform: translateY(-28px);
+  animation: xmk-drop 1.2s cubic-bezier(0.2, 0.75, 0.2, 1) 1.6s forwards;
+}
+.xmk .rays {
+  opacity: 0;
+  transform-origin: 300px 243px;
+  transform: scale(0.85);
+  animation: xmk-rayin 1.3s ease 2.2s forwards;
+}
+.xmk .glow {
+  opacity: 0;
+  animation: xmk-fadein 1.6s ease 2.4s forwards;
+}
+
+/* Animaciones continuas */
+.xmk .spin {
+  transform-origin: 300px 243px;
+  animation: xmk-spin 80s linear infinite;
+}
+.xmk .spin-rev {
+  transform-origin: 300px 243px;
+  animation: xmk-spin 140s linear infinite reverse;
+}
+.xmk .spin-slow {
+  transform-origin: 300px 243px;
+  animation: xmk-spin 220s linear infinite reverse;
+}
+.xmk .breathe {
+  transform-origin: 300px 243px;
+  animation: xmk-breathe 5s ease-in-out 4s infinite;
+}
+.xmk .float {
+  animation: xmk-float 6s ease-in-out 2.8s infinite;
+}
+.xmk .twinkle {
+  transform-origin: 300px 58px;
+  animation: xmk-twinkle 3.2s ease-in-out 3s infinite;
+}
+
+/* Ciclo de 10 s: la serpiente de luz baja, la energía sube por la escalinata y estalla en la piedra angular */
+.xmk .serp {
+  opacity: 0.08;
+  animation: xmk-serp 10s linear infinite;
+  animation-delay: calc(6s + var(--j) * 180ms);
+}
+.xmk .head-glow {
+  opacity: 0;
+  animation: xmk-headglow 10s linear 7.3s infinite;
+}
+.xmk .step {
+  animation: xmk-stepglow 10s linear infinite;
+  animation-delay: calc(9s + var(--k) * 35ms);
+}
+.xmk .capflash {
+  opacity: 0;
+  animation: xmk-flash 10s linear 10.2s infinite;
+}
+.xmk .burst {
+  opacity: 0;
+  transform-origin: 300px 243px;
+  animation: xmk-burst 10s ease-out 10.2s infinite;
+}
+.xmk .ripple {
+  transform-origin: 300px 243px;
+  animation: xmk-ripple 0.95s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+/* Wordmark y lema */
+.xmk-wordmark {
+  position: relative;
+  margin: 0 -0.38em 0 0;
+  font-family: var(--font-cinzel), 'Trajan Pro', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  line-height: 1;
+  color: var(--xmk-gold);
+}
+.xmk-wordmark span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: xmk-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: calc(3.3s + var(--i) * 80ms);
+}
+.xmk-wordmark::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 42%,
+    var(--xmk-gold-hi) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: 150% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: xmk-sheen 6s ease-in-out 5s infinite;
+  pointer-events: none;
+}
+.xmk-tagline {
+  margin: 0;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--xmk-ink-dim);
+}
+
+/* El wordmark y el lema arrancan junto con el símbolo (cuando el componente monta) */
+.xmk:not(.is-live) .xmk-wordmark span,
+.xmk:not(.is-live) .xmk-wordmark::after,
+.xmk:not(.is-live) .xmk-tagline {
+  animation: none;
+}
+
+/* Fuera de pantalla: se pausa todo (lo activa el componente con IntersectionObserver) */
+.xmk.is-paused *,
+.xmk.is-paused *::after {
+  animation-play-state: paused !important;
+}
+
+@keyframes xmk-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes xmk-fadein {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes xmk-drop {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes xmk-rayin {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes xmk-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes xmk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes xmk-breathe {
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+}
+@keyframes xmk-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes xmk-twinkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.35) rotate(45deg);
+    opacity: 1;
+  }
+}
+@keyframes xmk-sheen {
+  0% {
+    background-position: 150% 0;
+  }
+  40%,
+  100% {
+    background-position: -50% 0;
+  }
+}
+@keyframes xmk-serp {
+  0% {
+    opacity: 0.08;
+  }
+  3% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0.08;
+  }
+}
+@keyframes xmk-headglow {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes xmk-stepglow {
+  0% {
+    stroke: var(--xmk-ink-dim);
+    stroke-width: 0.8;
+  }
+  1.5% {
+    stroke: var(--xmk-gold-hi);
+    stroke-width: 2;
+  }
+  7%,
+  100% {
+    stroke: var(--xmk-ink-dim);
+    stroke-width: 0.8;
+  }
+}
+@keyframes xmk-flash {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes xmk-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  3% {
+    opacity: 1;
+  }
+  16% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+@keyframes xmk-ripple {
+  from {
+    transform: scale(0.15);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xmk .draw,
+  .xmk .fade,
+  .xmk .cap,
+  .xmk .rays,
+  .xmk .glow,
+  .xmk-wordmark span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+  .xmk .spin,
+  .xmk .spin-rev,
+  .xmk .spin-slow,
+  .xmk .breathe,
+  .xmk .float,
+  .xmk .twinkle,
+  .xmk .serp,
+  .xmk .head-glow,
+  .xmk .step,
+  .xmk .capflash,
+  .xmk .burst,
+  .xmk-wordmark::after {
+    animation: none;
+  }
+}

@@ -20,11 +20,13 @@ src/config/                  Datos editables: site, services, industries, cases,
 src/lib/pricing/             Motor de precios PURO (types, schema, calculate, format, url-state) + pruebas
 src/lib/lead/                Esquemas Zod de leads (schema.ts) y constantes sin Zod (constants.ts)
 src/lib/gsap.ts              ÚNICO módulo que importa GSAP y registra plugins
+src/lib/schedule.ts          whenIdle / afterLoadIdle: trabajo no crítico fuera del primer pintado
 src/lib/seo.ts               buildMetadata (canonical, hreflang, OG) + JSON-LD
 src/i18n/                    routing (rutas traducidas), navigation (Link/useRouter localizados), request
 src/proxy.ts                 Middleware de next-intl (en Next 16 se llama proxy.ts)
 src/components/ui/           Primitivos: Button, Section/Container/SectionHeader, Icon, WhatsAppIcon
-src/components/brand/        AnimatedLogo, StepGrid (retícula maya), logo-geometry
+src/components/brand/        hero-mark/ (logo animado del hero + cielo), StepGrid (retícula maya)
+design/                      Diseños fuente (no se publican): xamanek-movimiento.html = original del logo animado
 src/components/motion/       Wrappers GSAP (SplitHeading, Reveal) y MotionProvider
 src/components/layout/       Navbar (server) + NavShell/NavDropdown/MobileMenu/LocaleSwitcher (client), Footer, WhatsAppFab
 src/components/sections/     Secciones reutilizables (Hero, ServicesGrid, Faq, CtaBand, PageHero…)
@@ -49,6 +51,12 @@ Tokens en `src/app/globals.css` (`@theme`): generan clases Tailwind y CSS variab
 | `muted-on-dark` | `#8FA3BC` | Texto secundario sobre oscuro                            |
 
 Tipografía (next/font en `src/app/fonts.ts`): **Sora** títulos (`font-display`), **Inter** texto (`font-sans`), **JetBrains Mono** cifras y precios (`font-mono`).
+Cinzel y Cormorant Garamond son **solo del logo animado** (wordmark y lema), en `components/brand/hero-mark/fonts.ts`.
+
+**Logo:** el logo animado del hero (`components/brand/hero-mark/`) es el diseño oficial de Xamanek, con su **propia paleta
+dorada**; la regla "gold solo para CTA" aplica a la interfaz, no al logo. Navbar, footer y favicon usan el logo estático
+(`public/brand/logo.svg`, `src/app/icon.svg`). No cambies la geometría ni el comportamiento del logo animado sin
+contrastarlo con `design/xamanek-movimiento.html`.
 
 Estilo: futurista pero corporativo (público: CFOs y dueños de empresa). Paneles tipo vidrio (`.glass`, borde 1px `line`) con brillo jade sutil en hover (`.glass-hover`). Sin neón ni estética cripto. **Alterna secciones oscuras y claras.** Firma visual: `StepGrid` (escalones de pirámide maya, opacidad baja) solo en hero, simulador y bandas que llevan al simulador.
 
@@ -66,15 +74,21 @@ Estilo: futurista pero corporativo (público: CFOs y dueños de empresa). Panele
 
 ## Animación: GSAP vs Motion
 
-- **GSAP** (`src/lib/gsap.ts`): logo del hero, retícula escalonada, entrada de titulares (SplitText) y revelado al hacer scroll.
+- **GSAP** (`src/lib/gsap.ts`): ticker del logo animado, retícula escalonada, entrada de titulares (SplitText) y revelado al hacer scroll.
   - Importa SIEMPRE desde `@/lib/gsap`, nunca de `gsap/*`. Los plugins se registran una sola vez con `loadGsapPlugins()`.
-  - En componentes usa `useGSAPAfterPaint(setup, ref)`: corre tras el primer pintado (no afecta el LCP) y limpia al desmontar.
+  - En componentes usa `useGSAPAfterPaint(setup, ref)`: corre en tiempo libre, con plugins y fuentes cargados (no afecta el LCP) y limpia al desmontar.
   - Usa `gsap.matchMedia()` con `MEDIA.motionOk`; el seguimiento del cursor además exige `MEDIA.finePointer` (no táctil).
   - Elementos animados con `data-reveal` arrancan ocultos por CSS (solo sin movimiento reducido) y tienen respaldo CSS a 2.5s.
 - **Motion** (`motion/react-m` dentro de `MotionProvider`): SOLO microinteracciones del simulador (wizard, chips, resultado, conteo de cifras, switch de moneda). Los menús usan transiciones CSS para mantener Motion fuera del JS inicial.
 - **Nunca animes el mismo elemento con GSAP y Motion.**
 - Todo respeta `prefers-reduced-motion`. Nada de videos de fondo ni 3D.
 - El logo del hero es la única animación protagonista de la primera pantalla; el `h1` del hero no se anima (es el LCP).
+- **Logo animado** (`components/brand/hero-mark/`): port del diseño original. El SVG se construye en el cliente con
+  `afterLoadIdle` (después de `load`); el ojo, los párpados y el paralaje corren en `gsap.ticker`, y las animaciones
+  decorativas (rayos, halo, dibujo de la pirámide, luz de Kukulkán) son keyframes CSS con prefijo `xmk-` en
+  `hero-mark.css`. Se pausa fuera de pantalla; el ojo sigue al cursor solo con puntero fino; el wordmark y el lema se
+  pintan al arrancar (sus fuentes no compiten con el LCP). El ciclo solo escribe en el DOM cuando un valor cambia
+  (cuantizado): mantenlo así.
 
 ## Convenciones
 
@@ -97,7 +111,8 @@ Estilo: futurista pero corporativo (público: CFOs y dueños de empresa). Panele
 
 ## Placeholders (por reemplazar antes de publicar)
 
-- `public/brand/logo.svg` y `src/components/brand/logo-geometry.ts`: logo placeholder.
+- `public/brand/logo.svg` y `src/app/icon.svg`: logo estático placeholder (navbar, footer, favicon, JSON-LD).
+- `hero.logoTagline` en `messages/*.json`: el lema del logo está en inglés en ambos idiomas (decisión de marca pendiente).
 - `src/config/odoo-pricing.json`: todos los precios, tarifas, horas y multiplicadores son de ejemplo (`_todo`).
 - `src/config/site.ts`: correo, razón social, LinkedIn, `bookingUrl` (agenda), número de WhatsApp (o `.env`).
 - `src/config/offices.ts`: direcciones y teléfonos.

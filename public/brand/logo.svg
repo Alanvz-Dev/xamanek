@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Xamanek">
-  <!-- PLACEHOLDER: reemplazar por el logo oficial de Xamanek.
-       Si cambias la geometría, actualiza también src/components/brand/logo-geometry.ts
-       (el hero anima una copia en línea de este logo). -->
+  <!-- PLACEHOLDER del logo estático (navbar, footer y JSON-LD). Reemplazar por el oficial.
+       El hero usa el logo animado de src/components/brand/hero-mark/. -->
   <defs>
     <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#132D52"/>

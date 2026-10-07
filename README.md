@@ -6,7 +6,7 @@ Operación en USA y México (prioridad) y Colombia.
 
 - **Next.js 16** (App Router, Turbopack, `output: 'standalone'`) + **TypeScript estricto** + **Tailwind CSS v4**
 - **next-intl**: rutas `/es` (por defecto) y `/en`, con URLs traducidas (`/es/soluciones/odoo` ↔ `/en/solutions/odoo`)
-- **GSAP** (+ `@gsap/react`, ScrollTrigger, SplitText, MorphSVG) para logo, retícula y scroll; **Motion** solo para microinteracciones del simulador
+- **GSAP** (+ `@gsap/react`, ScrollTrigger, SplitText) para el logo animado, la retícula y el scroll; **Motion** solo para microinteracciones del simulador
 - **Zod** para validar formularios y la configuración de precios · **Vitest** para pruebas
 - **Docker** (multi-stage, node:22-alpine) + **Caddy** (HTTPS automático)
 
@@ -39,19 +39,20 @@ npm run dev                  # http://localhost:3000 → redirige a /es
 
 ## Dónde editar
 
-| Quiero cambiar…                            | Archivo                                                           |
-| ------------------------------------------ | ----------------------------------------------------------------- |
-| **Textos** (ambos idiomas)                 | `messages/es.json` y `messages/en.json`                           |
-| **Precios del simulador Odoo**             | `src/config/odoo-pricing.json`                                    |
-| **Colores, tipografías, sombras**          | `src/app/globals.css` (bloque `@theme`)                           |
-| Servicios (orden, ícono, simulador sí/no)  | `src/config/services.ts`                                          |
-| Industrias (giro del simulador, servicios) | `src/config/industries.ts`                                        |
-| Casos de éxito (métricas)                  | `src/config/cases.ts`                                             |
-| Oficinas, direcciones, teléfonos           | `src/config/offices.ts`                                           |
-| Cifras de la barra de confianza            | `src/config/stats.ts`                                             |
-| Correo, WhatsApp, URL de agenda, redes     | `src/config/site.ts` y `.env`                                     |
-| Logo                                       | `public/brand/logo.svg` + `src/components/brand/logo-geometry.ts` |
-| Rutas y sus traducciones                   | `src/i18n/routing.ts`                                             |
+| Quiero cambiar…                            | Archivo                                                   |
+| ------------------------------------------ | --------------------------------------------------------- |
+| **Textos** (ambos idiomas)                 | `messages/es.json` y `messages/en.json`                   |
+| **Precios del simulador Odoo**             | `src/config/odoo-pricing.json`                            |
+| **Colores, tipografías, sombras**          | `src/app/globals.css` (bloque `@theme`)                   |
+| Servicios (orden, ícono, simulador sí/no)  | `src/config/services.ts`                                  |
+| Industrias (giro del simulador, servicios) | `src/config/industries.ts`                                |
+| Casos de éxito (métricas)                  | `src/config/cases.ts`                                     |
+| Oficinas, direcciones, teléfonos           | `src/config/offices.ts`                                   |
+| Cifras de la barra de confianza            | `src/config/stats.ts`                                     |
+| Correo, WhatsApp, URL de agenda, redes     | `src/config/site.ts` y `.env`                             |
+| Logo estático (navbar, footer)             | `public/brand/logo.svg` · favicon: `src/app/icon.svg`     |
+| Logo animado del hero                      | `src/components/brand/hero-mark/` (original en `design/`) |
+| Rutas y sus traducciones                   | `src/i18n/routing.ts`                                     |
 
 ### Textos (i18n)
 
