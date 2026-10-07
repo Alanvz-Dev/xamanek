@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Xamanek">
+  <!-- PLACEHOLDER: reemplazar por el logo oficial de Xamanek.
+       Si cambias la geometría, actualiza también src/components/brand/logo-geometry.ts
+       (el hero anima una copia en línea de este logo). -->
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#132D52"/>
+      <stop offset="1" stop-color="#0B1F3A"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#00A88F" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#00A88F" stop-opacity="0.04"/>
+    </linearGradient>
+    <clipPath id="eye-clip"><path d="M96 70 Q120 50 144 70 Q120 90 96 70 Z"/></clipPath>
+  </defs>
+  <g stroke="#00A88F" stroke-width="1.5" stroke-linejoin="round" fill="url(#face)">
+    <polygon points="24,226 216,226 204,198 36,198"/>
+    <polygon points="44,194 196,194 186,168 54,168"/>
+    <polygon points="62,164 178,164 170,140 70,140"/>
+    <polygon points="78,136 162,136 156,116 84,116"/>
+  </g>
+  <g stroke="#8FA3BC" stroke-width="1.2" stroke-linecap="round" opacity="0.7" fill="none">
+    <path d="M112 116 L104 226 M128 116 L136 226"/>
+    <path d="M110 140 H130 M109 152 H131 M108 164 H132 M107 180 H133 M106 196 H134 M105 212 H135"/>
+  </g>
+  <polygon points="120,18 166,100 74,100" fill="url(#cap)" stroke="#00A88F" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M96 70 Q120 50 144 70 Q120 90 96 70 Z" fill="#06121F" stroke="#E8EEF5" stroke-width="1.6"/>
+  <g clip-path="url(#eye-clip)">
+    <circle cx="120" cy="70" r="9" fill="#00A88F"/>
+    <circle cx="120" cy="70" r="4" fill="#06121F"/>
+    <circle cx="123" cy="67" r="1.6" fill="#E8EEF5"/>
+  </g>
+</svg>

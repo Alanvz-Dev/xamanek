@@ -1,0 +1,6 @@
+# Saltos de línea LF en todo el repo (Prettier, Dockerfile y Caddyfile en Linux)
+* text=auto eol=lf
+
+*.png binary
+*.ico binary
+*.woff2 binary

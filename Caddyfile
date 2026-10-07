@@ -1,0 +1,28 @@
+# XAMANEK — reverse proxy con HTTPS automático (Let's Encrypt).
+# DOMAIN y ACME_EMAIL vienen de .env (vía docker-compose.yml).
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	encode zstd gzip
+
+	header {
+		# HSTS: 1 año. Agrega "; preload" solo cuando estés seguro de servir HTTPS en todos los subdominios.
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+
+	# Caddy envía X-Forwarded-For con la IP real del cliente (lo usa el rate limit de /api/lead)
+	reverse_proxy web:3000
+}
+
+# www → dominio principal
+www.{$DOMAIN} {
+	redir https://{$DOMAIN}{uri} permanent
+}

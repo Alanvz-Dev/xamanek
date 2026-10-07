@@ -1,0 +1,45 @@
+# XAMANEK — producción en un servidor Ubuntu con Docker.
+# Las variables se leen del archivo .env (copiar desde .env.example).
+#   docker compose up -d --build
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:?Define NEXT_PUBLIC_SITE_URL en .env}
+        NEXT_PUBLIC_WHATSAPP_NUMBER: ${NEXT_PUBLIC_WHATSAPP_NUMBER:?Define NEXT_PUBLIC_WHATSAPP_NUMBER en .env}
+    image: xamanek-web:latest
+    restart: unless-stopped
+    # Sin puertos publicados: solo Caddy lo alcanza por la red interna (web:3000)
+    expose:
+      - '3000'
+    environment:
+      NODE_ENV: production
+      # TODO(CRM): credenciales de Odoo para /api/lead (ver .env.example)
+      # ODOO_URL: ${ODOO_URL}
+      # ODOO_DB: ${ODOO_DB}
+      # ODOO_USER: ${ODOO_USER}
+      # ODOO_API_KEY: ${ODOO_API_KEY}
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp' # HTTP/3
+    environment:
+      DOMAIN: ${DOMAIN:?Define DOMAIN en .env}
+      ACME_EMAIL: ${ACME_EMAIL:?Define ACME_EMAIL en .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data # certificados (no borrar: evita el límite de emisión de Let's Encrypt)
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

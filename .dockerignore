@@ -1,0 +1,30 @@
+# Dependencias y builds locales (se reinstalan/reconstruyen dentro de la imagen)
+node_modules
+.next
+out
+build
+coverage
+
+# Control de versiones y herramientas
+.git
+.gitignore
+.vscode
+.idea
+.claude
+
+# Variables de entorno: NUNCA dentro de la imagen
+.env
+.env*
+
+# Archivos de despliegue que no necesita el build
+Dockerfile
+.dockerignore
+docker-compose.yml
+Caddyfile
+
+# Varios
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

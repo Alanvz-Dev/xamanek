@@ -1,0 +1,924 @@
+{
+  "meta": {
+    "siteName": "Xamanek",
+    "home": {
+      "title": "Xamanek | Odoo ERP, fintech, WhatsApp and AI for businesses",
+      "description": "Odoo ERP implementation, ERP for fintechs and lenders, WhatsApp collections and AI agents. Teams in the United States, Mexico and Colombia. Estimate your Odoo investment."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Talk to a Xamanek specialist about Odoo ERP, fintech platforms, WhatsApp or AI. We reply within one business day."
+    },
+    "privacy": {
+      "title": "Privacy notice",
+      "description": "Xamanek privacy notice."
+    },
+    "terms": {
+      "title": "Terms and conditions",
+      "description": "Terms and conditions for using the Xamanek website."
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "placeholderData": "Sample data",
+    "bookCall": "Book a call",
+    "contactUs": "Contact us",
+    "talkToExpert": "Talk to an expert",
+    "backHome": "Back to home",
+    "countries": {
+      "US": "United States",
+      "MX": "Mexico",
+      "CO": "Colombia"
+    }
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Xamanek home",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "simulator": "Odoo Estimator",
+    "contact": "Contact",
+    "bookDemo": "Book a demo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "switchTo": "View the site in {language}",
+    "languages": {
+      "es": "Español",
+      "en": "English"
+    }
+  },
+  "hero": {
+    "eyebrow": "ERP · Fintech · WhatsApp · AI",
+    "title": "Technology that brings order to your finances and scales your operation",
+    "subtitle": "We implement Odoo ERP, platforms for fintechs and lenders, WhatsApp collections and AI agents for companies in the United States, Mexico and Colombia.",
+    "ctaPrimary": "Estimate my Odoo investment",
+    "ctaSecondary": "Talk to an expert",
+    "logoLabel": "Xamanek: stepped pyramid with capstone and eye",
+    "highlights": {
+      "fiscal": "Local tax compliance (US & Mexico CFDI 4.0)",
+      "nearshore": "Teams in your time zone",
+      "pricing": "Clear investment from day one"
+    }
+  },
+  "trust": {
+    "label": "Presence and results",
+    "presence": "Operating in",
+    "stats": {
+      "projects": "projects delivered",
+      "years": "years of experience",
+      "users": "users on platforms we implemented",
+      "countries": "countries with in-house teams"
+    }
+  },
+  "services": {
+    "eyebrow": "Solutions",
+    "title": "Five fronts to digitize your operation end to end",
+    "subtitle": "From the ERP that keeps your numbers straight to the channels and agents that talk to your customers.",
+    "learnMore": "Explore the solution",
+    "simulatorBadge": "Includes price estimator",
+    "quoteBadge": "Custom quote",
+    "items": {
+      "odoo": {
+        "name": "Odoo ERP implementation",
+        "short": "Assessment, configuration, migration, training and support, with tax localization for the United States and Mexico.",
+        "heroTitle": "Odoo ERP implemented around how your company actually runs",
+        "heroSubtitle": "We unify finance, sales, inventory and operations on a single platform, with local tax compliance, bank integrations and an adoption plan for your team.",
+        "benefits": [
+          {
+            "title": "A single source of truth",
+            "text": "Accounting, sales, purchasing and inventory connected in real time. No more manual reconciliations between systems."
+          },
+          {
+            "title": "Local tax compliance",
+            "text": "State sales tax and reporting in the United States; CFDI 4.0 e-invoicing, payment complements and electronic accounting in Mexico."
+          },
+          {
+            "title": "Predictable total cost",
+            "text": "Per-user licenses, phased implementation and support with a defined scope. You know your investment before you start."
+          },
+          {
+            "title": "Scale without reimplementing",
+            "text": "Add apps, companies and users as you grow, without switching platforms or losing history."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Assessment",
+            "text": "We map processes, current systems and tax requirements, then deliver scope, timeline and a fixed quote."
+          },
+          {
+            "title": "Configuration and migration",
+            "text": "We configure apps, workflows and permissions, and migrate master data, balances and history with joint validation."
+          },
+          {
+            "title": "Training and go-live",
+            "text": "Role-based training, go-live support and stabilization during the first weeks."
+          },
+          {
+            "title": "Support and continuous improvement",
+            "text": "Help desk with SLA, version upgrades and new automations as your business evolves."
+          }
+        ],
+        "faq": [
+          {
+            "q": "How long does an Odoo implementation take?",
+            "a": "A typical finance and sales implementation takes 6 to 12 weeks. Projects with manufacturing, multiple companies or complex integrations can take 3 to 6 months. The exact timeline is defined during the assessment."
+          },
+          {
+            "q": "What is the difference between the Standard and Custom plans?",
+            "a": "Standard includes all apps on Odoo Online. Custom is required for Studio, multi-company, external API access and hosting on Odoo.sh or on-premise. Our estimator detects the plan you need automatically."
+          },
+          {
+            "q": "Can you migrate data from my current system?",
+            "a": "Yes. We migrate master data, opening balances and history from spreadsheets, QuickBooks, SAP Business One, NetSuite and other ERPs, with reconciliation and sign-off from your team."
+          },
+          {
+            "q": "How are licenses purchased?",
+            "a": "Licenses follow Odoo S.A.'s current price list, and we help you choose and purchase the right plan. Implementation and support are contracted with Xamanek."
+          }
+        ],
+        "metaTitle": "Odoo ERP implementation in the US and Mexico",
+        "metaDescription": "Odoo ERP implementation with local tax compliance, data migration and support. Instantly estimate your investment in licenses, implementation and support."
+      },
+      "fintech-erp": {
+        "name": "ERP for fintechs, lenders and financial firms",
+        "short": "Operational and accounting platform for origination, loan servicing and collections, with audit-ready traceability.",
+        "heroTitle": "The operational core your lending business needs to grow with control",
+        "heroSubtitle": "Origination, loan servicing, accounting and collections connected, with full traceability for audits and regulatory reporting.",
+        "benefits": [
+          {
+            "title": "Real-time portfolio",
+            "text": "Balances, due dates, interest and late fees calculated automatically by loan, product and branch."
+          },
+          {
+            "title": "Accounting without manual reconciliation",
+            "text": "Every disbursement, payment and charge-off creates its journal entry. Month-end close stops taking weeks."
+          },
+          {
+            "title": "Audit-ready",
+            "text": "Configurable regulatory reports, digital loan files and a full change log for auditors and regulators."
+          },
+          {
+            "title": "Connected to your ecosystem",
+            "text": "We integrate credit bureaus, banks, ACH/SPEI, payment gateways and your mobile app through APIs."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Regulatory and operational assessment",
+            "text": "We review credit products, origination flows, chart of accounts and regulatory obligations."
+          },
+          {
+            "title": "Solution design",
+            "text": "We define the architecture: Odoo as the accounting core with specialized servicing modules, or integration with your current core."
+          },
+          {
+            "title": "Phased implementation",
+            "text": "We start with accounting and servicing, then collections and digital channels. Each phase has measurable acceptance criteria."
+          },
+          {
+            "title": "Assisted operation",
+            "text": "We support closings, audits and regulatory changes with a team that knows your operation."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Does it work for regulated entities and Mexican SOFOMs?",
+            "a": "Yes. The solution is designed for non-bank lenders, including Mexican SOFOM ENR, SOFOM ER and SOFIPO entities, considering their reporting and anti-money-laundering obligations."
+          },
+          {
+            "q": "Can I keep my current loan core?",
+            "a": "Yes. We can integrate your core with Odoo as the accounting and collections layer, or migrate you completely if your current system is limiting growth."
+          },
+          {
+            "q": "Where is the data hosted?",
+            "a": "On the cloud of your choice (AWS, Azure, Google Cloud or Odoo.sh) or on your own infrastructure, with encryption, backups and role-based access controls."
+          },
+          {
+            "q": "How is this service priced?",
+            "a": "Each project is quoted after an assessment, because it depends on your credit products, portfolio volume and integrations. Book a call and we will deliver a fixed-scope proposal."
+          }
+        ],
+        "metaTitle": "ERP for fintechs, lenders and SOFOMs",
+        "metaDescription": "Integrated origination, servicing, accounting and collections for fintechs, lenders and SOFOMs, with audit-ready traceability."
+      },
+      "whatsapp": {
+        "name": "WhatsApp marketing and collections",
+        "short": "Campaigns, payment reminders and customer service on Meta's official WhatsApp Business API, integrated with your ERP or CRM.",
+        "heroTitle": "Collect and sell on the channel your customers actually read",
+        "heroSubtitle": "We automate payment reminders, campaigns and customer service on WhatsApp with Meta's official API, connected to your portfolio and CRM so every message has context.",
+        "benefits": [
+          {
+            "title": "Meta's official API",
+            "text": "Verified number, approved templates and policy compliance. No risk of bans from unofficial tools."
+          },
+          {
+            "title": "Preventive and corrective collections",
+            "text": "Reminders before due dates, past-due notices and payment links, segmented by days past due and customer profile."
+          },
+          {
+            "title": "Measurable campaigns",
+            "text": "Delivery, read, reply and conversion rates by campaign and template, tied to your actual sales."
+          },
+          {
+            "title": "Shared inbox",
+            "text": "Your team works from a single inbox with assignment, tags and the full customer history."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Onboarding and verification",
+            "text": "We set up your WhatsApp Business Platform account, verify your business and register your numbers."
+          },
+          {
+            "title": "Templates and flows",
+            "text": "We write and approve templates, and design collections, sales and service flows."
+          },
+          {
+            "title": "Integration",
+            "text": "We connect WhatsApp to your ERP, CRM or loan core so messages are triggered with real data."
+          },
+          {
+            "title": "Optimization",
+            "text": "We measure results and tune messages, timing and segments every month."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is the difference between the official API and the WhatsApp Business app?",
+            "a": "The app is designed for a single phone. The official API lets you automate, integrate systems, work with multiple agents and send campaigns at scale while complying with Meta's policies."
+          },
+          {
+            "q": "How much does it cost to send messages?",
+            "a": "Meta charges by message category (marketing, utility, authentication or service) and the recipient's country. We help you estimate the cost for your volume."
+          },
+          {
+            "q": "Can I use my current number?",
+            "a": "Yes, as long as it is not registered on another API account. We guide you through the number migration."
+          },
+          {
+            "q": "How is it priced?",
+            "a": "It depends on volume, flows and integrations. Book a call and we will send you a tailored proposal."
+          }
+        ],
+        "metaTitle": "WhatsApp marketing and collections (Meta's official API)",
+        "metaDescription": "WhatsApp campaigns, collections and customer service on Meta's official API, integrated with your ERP, CRM or loan core."
+      },
+      "ia": {
+        "name": "AI agents for your customers",
+        "short": "Conversational agents that serve, qualify and follow up with your customers on WhatsApp and web, connected to your systems.",
+        "heroTitle": "AI agents that serve your customers like your best account executive",
+        "heroSubtitle": "We design agents that answer questions, qualify leads, check balances and book appointments on WhatsApp and web, using real data from your systems and handing off to people when needed.",
+        "benefits": [
+          {
+            "title": "24/7 service with context",
+            "text": "The agent queries your ERP, CRM or loan core to give precise answers: order status, balances and payment dates."
+          },
+          {
+            "title": "Lead qualification",
+            "text": "It asks the right questions, registers the lead in your CRM and routes it to the right rep."
+          },
+          {
+            "title": "Control and security",
+            "text": "Clear limits on what it can answer, protected sensitive data and a log of every conversation."
+          },
+          {
+            "title": "Handoff to people",
+            "text": "When the conversation calls for it, it transfers to your team with full context, so customers never repeat themselves."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Use cases",
+            "text": "We identify the highest-volume, highest-value conversations: FAQs, sales, collections or support."
+          },
+          {
+            "title": "Agent design",
+            "text": "We define tone, knowledge, tools, integrations and escalation rules."
+          },
+          {
+            "title": "Controlled pilot",
+            "text": "We launch with a customer segment, measure accuracy and satisfaction, and refine."
+          },
+          {
+            "title": "Scale and improve",
+            "text": "We expand channels and use cases with continuous quality monitoring."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Which AI models do you use?",
+            "a": "We choose the model based on the use case, language and privacy requirements. We work with leading providers and design the solution so the model can be swapped without rebuilding it."
+          },
+          {
+            "q": "Can the agent make mistakes?",
+            "a": "We design it to answer only with verified information from your systems and documents, with explicit limits and handoff to people whenever in doubt. We also monitor its performance continuously."
+          },
+          {
+            "q": "What happens to my customers' data?",
+            "a": "We apply data minimization, encryption and access controls, and configure providers so your data is not used to train models."
+          },
+          {
+            "q": "How is it priced?",
+            "a": "Based on channels, conversation volume and integrations. Book a call to define the scope."
+          }
+        ],
+        "metaTitle": "AI agents for customer service, sales and collections",
+        "metaDescription": "AI agents that serve your customers on WhatsApp and web using real data from your systems, with handoff to people."
+      },
+      "desarrollo-a-la-medida": {
+        "name": "Custom software development",
+        "short": "Portals, apps and integrations built for your operation, with modern architecture and teams in your time zone.",
+        "heroTitle": "Custom software for what no off-the-shelf system solves",
+        "heroSubtitle": "We build customer portals, mobile apps, integrations and custom Odoo modules with senior nearshore teams in US and Mexico time zones.",
+        "benefits": [
+          {
+            "title": "Architecture that scales",
+            "text": "Modular design, documented APIs and cloud infrastructure built to grow without rewrites."
+          },
+          {
+            "title": "Nearshore teams",
+            "text": "Engineers in Mexico and Colombia, in your time zone, communicating in English and Spanish."
+          },
+          {
+            "title": "Releases every two weeks",
+            "text": "Visible progress every sprint, with demos and priorities agreed with you."
+          },
+          {
+            "title": "Quality and security from day one",
+            "text": "Automated tests, code reviews and security best practices in every release."
+          }
+        ],
+        "steps": [
+          {
+            "title": "Discovery",
+            "text": "We understand the business problem, the users and the technical constraints, and define the minimum viable product."
+          },
+          {
+            "title": "Design and architecture",
+            "text": "Clickable prototypes, technical architecture and a release plan."
+          },
+          {
+            "title": "Iterative development",
+            "text": "Two-week sprints with demos, testing and continuous deployment."
+          },
+          {
+            "title": "Launch and evolution",
+            "text": "Production launch, monitoring and an improvement roadmap."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Which technologies do you work with?",
+            "a": "Python, TypeScript, React, Next.js, Node.js, relational databases and AWS, Azure and Google Cloud, as well as custom Odoo modules."
+          },
+          {
+            "q": "Who owns the code?",
+            "a": "You do. At the end of each stage we hand over the source code, documentation and credentials."
+          },
+          {
+            "q": "Can you work alongside our in-house team?",
+            "a": "Yes. We can work as a full team or augment yours with specific roles."
+          },
+          {
+            "q": "How is it priced?",
+            "a": "Fixed scope or dedicated team, depending on the project's maturity. Book a call to review it."
+          }
+        ],
+        "metaTitle": "Custom software development (nearshore)",
+        "metaDescription": "Custom portals, apps, integrations and Odoo modules built by senior nearshore teams in Mexico and Colombia, in your time zone."
+      }
+    }
+  },
+  "serviceDetail": {
+    "benefitsEyebrow": "Benefits",
+    "benefitsTitle": "What your operation gains",
+    "howEyebrow": "How it works",
+    "howTitle": "A clear process, start to finish",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "What clients usually ask",
+    "ctaTitle": "Ready for the next step?",
+    "ctaSubtitle": "Book a 30-minute call with a specialist. We review your case and propose a clear scope.",
+    "simulatorTitle": "Estimate your Odoo investment in two minutes",
+    "simulatorSubtitle": "Licenses, implementation and support in USD or MXN, no sign-up. Share the result with your team.",
+    "simulatorCta": "Open the estimator",
+    "relatedTitle": "Other solutions"
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "Specialists in industries where every dollar counts",
+    "subtitle": "We know the operations, regulations and KPIs of each sector.",
+    "learnMore": "See solutions for this industry",
+    "items": {
+      "fintech": {
+        "name": "Fintech",
+        "short": "Scale without accounting, collections and support becoming bottlenecks.",
+        "heroTitle": "Operational infrastructure for fast-growing fintechs",
+        "heroSubtitle": "We connect your product to accounting, collections and customer service so every new customer doesn't mean more manual work.",
+        "challenges": [
+          {
+            "title": "Growing transaction volume",
+            "text": "Thousands of daily movements that must hit the books without manual work."
+          },
+          {
+            "title": "Support that doesn't scale",
+            "text": "Support teams swamped by repetitive questions about balances, payments and status."
+          },
+          {
+            "title": "Regulatory pressure",
+            "text": "Reports, traceability and controls demanded by regulators and investors."
+          }
+        ],
+        "metaTitle": "Technology solutions for fintech",
+        "metaDescription": "ERP, WhatsApp collections and AI agents for fintechs: automated accounting, scalable support and regulatory traceability."
+      },
+      "sofom-sofipo": {
+        "name": "SOFOM / SOFIPO",
+        "short": "Integrated portfolio, accounting and collections, with audit-ready traceability.",
+        "heroTitle": "Full control of your portfolio, from origination to collections",
+        "heroSubtitle": "We unify origination, loan servicing, accounting and WhatsApp collections for Mexican SOFOM ENR, SOFOM ER and SOFIPO entities.",
+        "challenges": [
+          {
+            "title": "Portfolio in spreadsheets",
+            "text": "Interest and late-fee calculations outside the system, with error risk and no audit trail."
+          },
+          {
+            "title": "Slow month-end close",
+            "text": "Manual reconciliations between the loan core, banks and accounting."
+          },
+          {
+            "title": "Reactive collections",
+            "text": "Calls and messages without segmentation or effectiveness tracking."
+          }
+        ],
+        "metaTitle": "ERP and collections for SOFOMs and SOFIPOs",
+        "metaDescription": "Origination, servicing, accounting and WhatsApp collections for Mexican SOFOM ENR, SOFOM ER and SOFIPO entities. Estimate your Odoo implementation."
+      },
+      "financieras": {
+        "name": "Lenders",
+        "short": "Fast origination, healthy portfolios and effective collections for lending and leasing.",
+        "heroTitle": "Technology for lenders that want to grow with a healthy portfolio",
+        "heroSubtitle": "For lending, leasing and factoring companies: digital origination, portfolio control and smart collections.",
+        "challenges": [
+          {
+            "title": "Slow origination",
+            "text": "Paper files and manual checks that delay your answer to the customer."
+          },
+          {
+            "title": "Limited portfolio visibility",
+            "text": "No real-time indicators for delinquency, concentration and profitability."
+          },
+          {
+            "title": "Costly collections",
+            "text": "Manual efforts with low contact and recovery rates."
+          }
+        ],
+        "metaTitle": "Software for lenders, leasing and factoring",
+        "metaDescription": "Digital origination, portfolio control and smart collections for lenders, leasing and factoring companies."
+      },
+      "retail": {
+        "name": "Retail",
+        "short": "Inventory, point of sale, eCommerce and invoicing in sync across every store.",
+        "heroTitle": "Omnichannel retail with inventory and sales on one platform",
+        "heroSubtitle": "Point of sale, online store, inventory and invoicing connected so you can sell on every channel without discrepancies.",
+        "challenges": [
+          {
+            "title": "Inventory mismatches",
+            "text": "Different stock levels between stores, warehouse and online shop."
+          },
+          {
+            "title": "Scattered invoicing",
+            "text": "Receipts and invoices issued in separate systems that never reconcile."
+          },
+          {
+            "title": "No customer follow-up",
+            "text": "One-time purchases with no repurchase campaigns or loyalty programs."
+          }
+        ],
+        "metaTitle": "ERP and point of sale for retail",
+        "metaDescription": "Odoo for retail: point of sale, eCommerce, multi-store inventory and invoicing connected. Estimate your investment."
+      },
+      "manufactura": {
+        "name": "Manufacturing",
+        "short": "Production, costing and quality connected with sales, purchasing and inventory.",
+        "heroTitle": "Manufacturing with real costs and production under control",
+        "heroSubtitle": "Material planning, work orders, quality and costing integrated with sales, purchasing and finance.",
+        "challenges": [
+          {
+            "title": "Uncertain production costs",
+            "text": "Without real costing per order, product margins are hard to calculate."
+          },
+          {
+            "title": "Reactive planning",
+            "text": "Material shortages and line stoppages due to lack of visibility."
+          },
+          {
+            "title": "Incomplete traceability",
+            "text": "Lots and serial numbers without end-to-end tracking."
+          }
+        ],
+        "metaTitle": "ERP for manufacturing",
+        "metaDescription": "Odoo for manufacturing: MRP, quality, costing per order and lot traceability integrated with finance. Estimate your implementation."
+      },
+      "distribucion": {
+        "name": "Distribution",
+        "short": "Purchasing, warehouses, deliveries and collections coordinated for distributors.",
+        "heroTitle": "Efficient distribution, from warehouse to collections",
+        "heroSubtitle": "Purchasing, multi-warehouse inventory, orders, deliveries and collections connected to operate on ever-thinner margins.",
+        "challenges": [
+          {
+            "title": "Multiple warehouses, no control",
+            "text": "Transfers, shrinkage and stock levels without a consolidated view."
+          },
+          {
+            "title": "Orders from scattered channels",
+            "text": "Orders by phone, email and WhatsApp keyed in by hand."
+          },
+          {
+            "title": "Slow collections",
+            "text": "High days sales outstanding that squeeze cash flow."
+          }
+        ],
+        "metaTitle": "ERP for distribution and logistics",
+        "metaDescription": "Odoo for distributors: purchasing, multi-warehouse inventory, WhatsApp orders and integrated collections. Estimate your investment."
+      }
+    }
+  },
+  "industryDetail": {
+    "challengesEyebrow": "Industry challenges",
+    "challengesTitle": "What holds {industry} companies back",
+    "servicesEyebrow": "How we help",
+    "servicesTitle": "Recommended solutions for {industry}",
+    "simulatorTitle": "Estimate your Odoo implementation for {industry}",
+    "simulatorSubtitle": "We preselected the industry and recommended apps. Adjust users, apps and extras to see your estimate instantly."
+  },
+  "simulator": {
+    "eyebrow": "Odoo Estimator",
+    "title": "Estimate your Odoo investment in under two minutes",
+    "subtitle": "Configure your company and instantly get an estimate for licenses, implementation and support. No sign-up.",
+    "loading": "Loading estimator…",
+    "currency": {
+      "label": "USD / MXN",
+      "description": "Estimate currency"
+    },
+    "progress": "Step {current} of {total}",
+    "steps": {
+      "industry": "Industry",
+      "users": "Users",
+      "modules": "Apps",
+      "extras": "Extras"
+    },
+    "stepTitles": {
+      "industry": "What does your company do?",
+      "users": "How many people will use Odoo?",
+      "modules": "Which areas do you want to digitize?",
+      "extras": "Fine-tune your implementation"
+    },
+    "stepHints": {
+      "industry": "We preselect the recommended apps for your industry; you can adjust them in step 3.",
+      "users": "Count the people who will work inside the system. Customer and vendor portals don't require a license.",
+      "modules": "Choose the apps you need today. You can add more later without reimplementing.",
+      "extras": "Hosting, migration, integrations and support define the final scope."
+    },
+    "industries": {
+      "fintech": "Fintech",
+      "sofom": "SOFOM / SOFIPO",
+      "lending": "Lending / Credit",
+      "retail": "Retail / Commerce",
+      "manufacturing": "Manufacturing",
+      "distribution": "Distribution / Logistics",
+      "professional-services": "Professional services",
+      "other": "Other"
+    },
+    "users": {
+      "label": "Number of users",
+      "count": "{count, plural, one {# user} other {# users}}",
+      "decrease": "Remove one user",
+      "increase": "Add one user"
+    },
+    "groups": {
+      "finance": "Finance",
+      "sales": "Sales",
+      "operations": "Operations",
+      "productivity": "Productivity"
+    },
+    "modules": {
+      "accounting": "Accounting",
+      "invoicing": "Invoicing (CFDI 4.0 for Mexico)",
+      "payroll": "Payroll",
+      "sales": "Sales",
+      "crm": "CRM",
+      "pos": "Point of sale",
+      "website": "Website / eCommerce",
+      "inventory": "Inventory",
+      "purchase": "Purchase",
+      "manufacturing": "Manufacturing",
+      "helpdesk": "Helpdesk",
+      "project": "Project",
+      "documents": "Documents",
+      "sign": "Sign (e-signature)",
+      "studio": "Studio"
+    },
+    "moduleTags": {
+      "custom": "Requires Custom plan",
+      "quote": "Quoted separately"
+    },
+    "modulesSelected": "{count, plural, =0 {No apps selected} one {# app selected} other {# apps selected}}",
+    "modulesRequired": "Select at least one app to run the estimate.",
+    "resetRecommended": "Reset to recommended",
+    "hosting": {
+      "label": "Hosting",
+      "options": {
+        "online": "Odoo Online",
+        "odoo-sh": "Odoo.sh",
+        "on-premise": "On-premise"
+      },
+      "hints": {
+        "online": "SaaS managed by Odoo. The fastest option.",
+        "odoo-sh": "Odoo's cloud platform with custom code. Requires the Custom plan.",
+        "on-premise": "On your servers or private cloud. Requires the Custom plan."
+      }
+    },
+    "migration": {
+      "label": "Data migration",
+      "options": {
+        "none": "None",
+        "basic": "Basic",
+        "complex": "Complex"
+      },
+      "hints": {
+        "none": "Start fresh or enter your master data yourself.",
+        "basic": "Master data and opening balances from spreadsheets.",
+        "complex": "History and transactions from another ERP."
+      }
+    },
+    "integrations": {
+      "label": "Additional integrations",
+      "hint": "Banks, payment gateways, marketplaces, credit bureaus or in-house systems.",
+      "count": "{count, plural, =0 {No integrations} one {# integration} other {# integrations}}",
+      "decrease": "Remove one integration",
+      "increase": "Add one integration"
+    },
+    "support": {
+      "label": "Support package",
+      "options": {
+        "none": "No support",
+        "basic": "Basic",
+        "premium": "Premium"
+      },
+      "hints": {
+        "none": "Implementation warranty only.",
+        "basic": "Help desk during business hours.",
+        "premium": "Extended SLA, dedicated consultant and monthly improvements."
+      }
+    },
+    "nav": {
+      "back": "Back",
+      "next": "Next",
+      "simulate": "Estimate",
+      "goToStep": "Go to step {step}: {name}"
+    },
+    "result": {
+      "title": "Your estimate",
+      "empty": "Complete the steps and press “Estimate” to see your numbers right away.",
+      "plan": "{plan} plan",
+      "plans": {
+        "standard": "Standard",
+        "custom": "Custom"
+      },
+      "customNote": "We automatically switched to the Custom plan:",
+      "reasonModule": "the {module} app is only available on the Custom plan.",
+      "reasonHosting": "{hosting} hosting requires the Custom plan.",
+      "quoteNote": "This app is quoted separately: {modules}. It is not included in the implementation range.",
+      "implementation": "Implementation",
+      "implementationDetail": "One-time fee · ≈ {hours} consulting hours",
+      "range": "{min} – {max}",
+      "licenses": "Odoo licenses",
+      "licensesDetail": "{users} × {price} per user per month",
+      "support": "Support",
+      "supportDetail": "{tier} package",
+      "perMonth": "per month",
+      "annual": "{amount} per year",
+      "monthlyTotal": "Total monthly fee",
+      "monthlyTotalDetail": "Licenses + support",
+      "firstYear": "Estimated first-year cost",
+      "firstYearDetail": "Implementation + 12 monthly fees",
+      "taxes": {
+        "plusVat": "+ VAT (IVA)",
+        "taxesExcluded": "Taxes not included"
+      },
+      "disclaimer": "Reference estimate. License prices are subject to Odoo S.A.'s current price list. The final quote is delivered after an assessment of your operation.",
+      "share": "Copy link to this estimate",
+      "copied": "Link copied",
+      "proposalCta": "Get a detailed proposal",
+      "announce": "Estimate updated. Implementation from {min} to {max}. Total monthly fee {monthly}."
+    },
+    "proposal": {
+      "title": "Get your detailed proposal",
+      "subtitle": "A consultant will review your estimate and send you a proposal within 48 business hours.",
+      "submit": "Send my estimate",
+      "close": "Close form"
+    },
+    "customQuote": {
+      "text": "Need WhatsApp, AI or custom development? Those projects are quoted individually.",
+      "cta": "Contact a specialist"
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "Four steps, no surprises",
+    "subtitle": "A proven methodology so you know what you get, when, and at what cost.",
+    "steps": [
+      {
+        "title": "Assessment",
+        "text": "We listen to your operation, review your systems and define measurable goals.",
+        "duration": "1–2 weeks"
+      },
+      {
+        "title": "Proposal and plan",
+        "text": "Fixed scope, timeline, assigned team and transparent investment.",
+        "duration": "1 week"
+      },
+      {
+        "title": "Implementation",
+        "text": "Phased releases, with sign-off at every stage and training for your team.",
+        "duration": "6–16 weeks"
+      },
+      {
+        "title": "Ongoing partnership",
+        "text": "SLA-backed support, continuous improvement and quarterly results reviews.",
+        "duration": "Ongoing"
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "Success stories",
+    "title": "Results that show up on the income statement",
+    "subtitle": "A few recent projects. Client names are kept confidential.",
+    "placeholderBadge": "Sample case",
+    "items": {
+      "sofom-cobranza": {
+        "client": "Regional lender (SOFOM)",
+        "title": "WhatsApp collections integrated with the loan core",
+        "summary": "We automated segmented preventive reminders and past-due notices, connected to the portfolio in real time.",
+        "metrics": ["in 30-day delinquency", "more effective contact than phone calls"]
+      },
+      "distribuidora-odoo": {
+        "client": "Industrial supplies distributor",
+        "title": "Multi-warehouse Odoo with integrated invoicing and collections",
+        "summary": "We replaced three siloed systems with Odoo, with real-time inventory across four warehouses.",
+        "metrics": ["weeks to go live", "in days of inventory"]
+      },
+      "fintech-ia": {
+        "client": "Payments fintech",
+        "title": "AI agent for customer service on WhatsApp",
+        "summary": "An agent that resolves balance, payment and status questions, and hands off to people with full context.",
+        "metrics": ["of inquiries resolved without human intervention", "availability"]
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your operation",
+    "subtitle": "Tell us what you want to solve. A specialist will reply within one business day with next steps.",
+    "points": {
+      "diagnosis": "Free initial assessment call",
+      "proposal": "Proposal with clear scope and investment",
+      "timezone": "A team in your time zone, in English or Spanish"
+    },
+    "whatsapp": "I'd rather message on WhatsApp"
+  },
+  "forms": {
+    "fields": {
+      "name": "Full name",
+      "company": "Company",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "country": "Country",
+      "service": "Service of interest",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Jane Smith",
+      "company": "Your company name",
+      "email": "jane@company.com",
+      "whatsapp": "+1 713 555 0123",
+      "message": "Briefly tell us what you want to solve"
+    },
+    "optional": "(optional)",
+    "selectPlaceholder": "Select an option",
+    "countryOptions": {
+      "US": "United States",
+      "MX": "Mexico",
+      "CO": "Colombia",
+      "OTHER": "Other country"
+    },
+    "serviceOther": "Other / not sure yet",
+    "honeypot": "Leave this field empty",
+    "errors": {
+      "name": "Enter your name (at least 2 characters).",
+      "company": "Enter your company name.",
+      "email": "Enter a valid email address.",
+      "whatsapp": "Enter a number with country code, e.g. +1 713 555 0123.",
+      "country": "Select your country.",
+      "service": "Select a service.",
+      "message": "The message is too long (2,000 characters max)."
+    },
+    "errorSummary": "Please review the highlighted fields.",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "success": {
+      "title": "Thank you! We received your information.",
+      "text": "A specialist will contact you within one business day."
+    },
+    "failure": "We couldn't send your information. Please try again or message us on WhatsApp.",
+    "rateLimited": "We received several submissions from your connection. Please wait a few minutes and try again.",
+    "privacy": "By submitting you accept our <link>privacy notice</link>."
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project",
+    "subtitle": "Tell us what you need and we'll reply within one business day. If you prefer, message us directly on WhatsApp.",
+    "channels": {
+      "title": "Other channels",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "offices": "Offices"
+    }
+  },
+  "offices": {
+    "us": {
+      "name": "United States",
+      "city": "Houston, Texas"
+    },
+    "mx": {
+      "name": "Mexico",
+      "city": "Mexico City"
+    },
+    "co": {
+      "name": "Colombia",
+      "city": "Bogotá"
+    }
+  },
+  "footer": {
+    "tagline": "Business technology for finance and operations in the United States, Mexico and Colombia.",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "company": "Company",
+    "offices": "Offices",
+    "alsoIn": "Also with a team in {country}",
+    "legal": {
+      "privacy": "Privacy notice",
+      "terms": "Terms and conditions"
+    },
+    "rights": "© {year} Xamanek. All rights reserved."
+  },
+  "whatsapp": {
+    "label": "Message us on WhatsApp",
+    "message": "Hi Xamanek, I'd like to learn more about your services."
+  },
+  "legal": {
+    "placeholder": "Sample document. It must be replaced with the version drafted and approved by legal counsel.",
+    "updated": "Last updated: {date}",
+    "privacy": {
+      "title": "Privacy notice",
+      "sections": [
+        {
+          "title": "Data controller",
+          "text": "Xamanek is responsible for the personal data you provide through this website, in accordance with the applicable laws of the United States, Mexico and Colombia."
+        },
+        {
+          "title": "Data we collect",
+          "text": "Name, company, email, WhatsApp number, country and the information you share in forms or the estimator, in order to contact you and prepare business proposals."
+        },
+        {
+          "title": "Your rights and contact",
+          "text": "You can request access, correction or deletion of your data, or object to its processing, by writing to the contact email published on this website."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms and conditions",
+      "sections": [
+        {
+          "title": "Use of the website",
+          "text": "The content of this website is for information only. Estimator results are for reference and do not constitute a binding offer."
+        },
+        {
+          "title": "Third-party pricing",
+          "text": "Odoo license prices are subject to Odoo S.A.'s current price list. WhatsApp messaging fees are subject to Meta's policies."
+        },
+        {
+          "title": "Intellectual property",
+          "text": "Odoo and WhatsApp are trademarks of their respective owners. Xamanek and its logo are the property of Xamanek."
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "We couldn't find this page",
+    "text": "The link may have changed. Let's take you back to the home page.",
+    "cta": "Back to home"
+  }
+}

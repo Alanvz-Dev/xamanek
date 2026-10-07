@@ -1,0 +1,220 @@
+{
+  "_todo": "Verificar con lista vigente de Odoo y tarifas Xamanek",
+  "_readme": "Todos los importes son VALORES DE EJEMPLO. Cada moneda tiene su propia tabla (no se convierte con tipo de cambio). Horas y multiplicadores son independientes de la moneda.",
+  "version": "2026-10-ejemplo",
+  "defaults": {
+    "industry": "fintech",
+    "users": 10,
+    "hosting": "online",
+    "migration": "basic",
+    "integrations": 1,
+    "support": "basic"
+  },
+  "defaultCurrencyByLocale": {
+    "es": "MXN",
+    "en": "USD"
+  },
+  "implementationMargin": 0.2,
+  "limits": {
+    "users": {
+      "min": 1,
+      "max": 500
+    },
+    "integrations": {
+      "min": 0,
+      "max": 10
+    }
+  },
+  "hoursPerIntegration": 24,
+  "migrationHours": {
+    "none": 0,
+    "basic": 24,
+    "complex": 80
+  },
+  "currencies": {
+    "USD": {
+      "_todo": "Verificar con lista vigente de Odoo y tarifas Xamanek",
+      "plans": {
+        "standard": 31.1,
+        "custom": 46.8
+      },
+      "hourlyRate": 95,
+      "support": {
+        "none": 0,
+        "basic": 900,
+        "premium": 2400
+      },
+      "rounding": 100,
+      "numberLocale": "en-US",
+      "taxNote": "taxesExcluded"
+    },
+    "MXN": {
+      "_todo": "Verificar con lista vigente de Odoo y tarifas Xamanek",
+      "plans": {
+        "standard": 450,
+        "custom": 680
+      },
+      "hourlyRate": 1500,
+      "support": {
+        "none": 0,
+        "basic": 15000,
+        "premium": 40000
+      },
+      "rounding": 1000,
+      "numberLocale": "es-MX",
+      "taxNote": "plusVat"
+    }
+  },
+  "hosting": {
+    "online": {
+      "requiresCustomPlan": false
+    },
+    "odoo-sh": {
+      "requiresCustomPlan": true
+    },
+    "on-premise": {
+      "requiresCustomPlan": true
+    }
+  },
+  "industries": {
+    "fintech": {
+      "complexity": 1.35,
+      "recommendedModules": ["accounting", "invoicing", "crm", "helpdesk", "documents", "sign"]
+    },
+    "sofom": {
+      "complexity": 1.45,
+      "recommendedModules": ["accounting", "invoicing", "crm", "documents", "sign", "studio"]
+    },
+    "lending": {
+      "complexity": 1.3,
+      "recommendedModules": ["accounting", "invoicing", "crm", "documents", "sign"]
+    },
+    "retail": {
+      "complexity": 1,
+      "recommendedModules": [
+        "accounting",
+        "invoicing",
+        "sales",
+        "inventory",
+        "purchase",
+        "pos",
+        "website"
+      ]
+    },
+    "manufacturing": {
+      "complexity": 1.25,
+      "recommendedModules": [
+        "accounting",
+        "invoicing",
+        "sales",
+        "inventory",
+        "purchase",
+        "manufacturing"
+      ]
+    },
+    "distribution": {
+      "complexity": 1.15,
+      "recommendedModules": ["accounting", "invoicing", "sales", "crm", "inventory", "purchase"]
+    },
+    "professional-services": {
+      "complexity": 0.95,
+      "recommendedModules": ["accounting", "invoicing", "crm", "project", "helpdesk", "sign"]
+    },
+    "other": {
+      "complexity": 1,
+      "recommendedModules": ["accounting", "invoicing", "sales", "crm"]
+    }
+  },
+  "modules": {
+    "accounting": {
+      "group": "finance",
+      "baseHours": 40,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "invoicing": {
+      "group": "finance",
+      "baseHours": 16,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "payroll": {
+      "group": "finance",
+      "baseHours": 40,
+      "requiresCustomPlan": false,
+      "requiresQuote": true
+    },
+    "sales": {
+      "group": "sales",
+      "baseHours": 16,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "crm": {
+      "group": "sales",
+      "baseHours": 12,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "pos": {
+      "group": "sales",
+      "baseHours": 24,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "website": {
+      "group": "sales",
+      "baseHours": 40,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "inventory": {
+      "group": "operations",
+      "baseHours": 32,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "purchase": {
+      "group": "operations",
+      "baseHours": 16,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "manufacturing": {
+      "group": "operations",
+      "baseHours": 48,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "helpdesk": {
+      "group": "operations",
+      "baseHours": 16,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "project": {
+      "group": "productivity",
+      "baseHours": 16,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "documents": {
+      "group": "productivity",
+      "baseHours": 8,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "sign": {
+      "group": "productivity",
+      "baseHours": 6,
+      "requiresCustomPlan": false,
+      "requiresQuote": false
+    },
+    "studio": {
+      "group": "productivity",
+      "baseHours": 24,
+      "requiresCustomPlan": true,
+      "requiresQuote": false
+    }
+  }
+}
