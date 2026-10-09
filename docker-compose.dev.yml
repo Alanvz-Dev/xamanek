@@ -1,0 +1,26 @@
+# XAMANEK — desarrollo con recarga en caliente dentro de Docker.
+# Útil cuando `npm run dev` no corre nativo en Windows (p. ej. SWC rechaza los permisos de C:\).
+#   docker compose -f docker-compose.dev.yml up        → http://localhost:3000
+#   docker compose -f docker-compose.dev.yml run --rm dev npm ci   (tras cambiar package-lock.json)
+# Producción sigue siendo docker-compose.yml.
+
+services:
+  dev:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "[ -d node_modules/next ] || npm ci --no-audit --no-fund; npx next dev -H 0.0.0.0"
+    ports:
+      - '3000:3000'
+    environment:
+      NEXT_TELEMETRY_DISABLED: '1'
+      # Los eventos de archivos no cruzan el bind mount de Windows: Next sondea (ver next.config.ts)
+      NEXT_DEV_POLL_MS: '500'
+    volumes:
+      - .:/app
+      # node_modules y .next viven en volúmenes de Linux: no se mezclan con los de Windows ni con OneDrive
+      - node_modules:/app/node_modules
+      - next_cache:/app/.next
+
+volumes:
+  node_modules:
+  next_cache:

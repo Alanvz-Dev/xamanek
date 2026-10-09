@@ -22,6 +22,13 @@ cp .env.example .env.local   # opcional en local: hay valores por defecto
 npm run dev                  # http://localhost:3000 → redirige a /es
 ```
 
+**Alternativa con Docker** (si `npm run dev` falla en Windows con `ERR_SWC_NATIVE_CACHE`, o sin Node instalado):
+
+```bash
+docker compose -f docker-compose.dev.yml up          # recarga en caliente en http://localhost:3000
+docker compose -f docker-compose.dev.yml exec dev npm run check   # comandos dentro del contenedor
+```
+
 ### Scripts
 
 | Comando             | Qué hace                                              |
