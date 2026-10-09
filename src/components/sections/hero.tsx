@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { heroMarkFonts } from '@/components/brand/hero-mark/fonts';
 import { HeroMark } from '@/components/brand/hero-mark/hero-mark';
 import { HeroSky } from '@/components/brand/hero-mark/hero-sky';
+import { HeroPartners } from '@/components/brand/hero-partners';
 import { StepGrid } from '@/components/brand/step-grid';
 import { ButtonLink } from '@/components/ui/button';
 import { Container, Section } from '@/components/ui/section';
@@ -55,12 +56,14 @@ export async function Hero() {
         </div>
 
         <div className={cn('order-first flex justify-center lg:order-none', heroMarkFonts)}>
-          <HeroMark
-            label={t('logoLabel')}
-            wordmark={siteConfig.name.toUpperCase()}
-            tagline={t('logoTagline')}
-            className="w-60 sm:w-72 lg:w-full lg:max-w-md"
-          />
+          <div className="w-60 sm:w-72 lg:w-full lg:max-w-md">
+            <HeroMark
+              label={t('logoLabel')}
+              wordmark={siteConfig.name.toUpperCase()}
+              tagline={t('logoTagline')}
+            />
+            <HeroPartners title={t('partnersTitle')} className="mt-6 sm:mt-8" />
+          </div>
         </div>
       </Container>
     </Section>
